@@ -1,0 +1,30 @@
+import java.util.*;  
+
+class Main{
+    public static void main(String arg[]) 
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Factor Number: ");  
+        int a= sc.nextInt();  
+        Solution s = new Solution();
+        System.out.println("Output: " +s.fib(a)); 
+
+    }
+}
+class Solution {
+    public int fib(int n) {
+      if(n == 0) return 0;
+      if(n == 1) return 1;
+        int a = 0;
+        int b = 1;
+        int sum = a + b;
+        while(n > 1)
+        {
+            sum = a + b;
+            a = b;
+            b = sum;
+            n--;
+        }
+        return sum;
+    }
+}
